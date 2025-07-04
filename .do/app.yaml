@@ -1,0 +1,13 @@
+name: canadian-weather-app
+region: nyc
+services:
+- dockerfile_path: Dockerfile
+  github:
+    branch: main
+    deploy_on_push: true
+    repo: YOUR_GITHUB_USERNAME/canadian-weather-app
+  http_port: 80
+  instance_count: 1
+  instance_size_slug: basic-xxs
+  name: web
+  source_dir: /

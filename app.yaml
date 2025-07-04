@@ -1,0 +1,19 @@
+name: canadian-weather-app
+region: nyc1
+services:
+- name: web
+  dockerfile_path: Dockerfile
+  source_dir: /
+  http_port: 80
+  instance_count: 1
+  instance_size_slug: professional-xs
+  health_check:
+    http_path: /
+    initial_delay_seconds: 10
+    period_seconds: 10
+    timeout_seconds: 10
+    success_threshold: 1
+    failure_threshold: 3
+  routes:
+  - path: /
+    preserve_path_prefix: false

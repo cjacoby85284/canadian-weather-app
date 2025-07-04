@@ -1,0 +1,24 @@
+{
+  "app": {
+    "name": "canadian-weather-app",
+    "region": "nyc",
+    "spec": {
+      "name": "canadian-weather-app",
+      "services": [
+        {
+          "name": "web",
+          "dockerfile_path": "Dockerfile",
+          "source_dir": "/",
+          "http_port": 80,
+          "instance_count": 1,
+          "instance_size_slug": "professional-xs",
+          "health_check": {
+            "http_path": "/",
+            "timeout_seconds": 10,
+            "port": 80
+          }
+        }
+      ]
+    }
+  }
+}
